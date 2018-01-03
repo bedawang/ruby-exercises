@@ -21,6 +21,10 @@
 
 def sum(list)
   # This is your job. :)
+  total = 0
+  list.each {|item| total += item}
+  return total
+  
 end
 
 if __FILE__ == $PROGRAM_NAME
