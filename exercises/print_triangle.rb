@@ -16,13 +16,16 @@
 # see how it works.  Experiment with different inputs.
 def print_line(count)
   (1..count).each do |i|
-    print "*"         # This prints a single "*"
+    print "* "         # This prints a single "*"
   end
 
   print "\n"  # This forces the output to the next line, like hitting "return"
 end
 
 def print_triangle(height)
+  (1..height).each {|x|
+    print_line(x)
+  }
   # You have to fill in the details here.
 end
 
