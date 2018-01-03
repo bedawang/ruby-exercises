@@ -12,10 +12,16 @@
 #   str.length == 4
 
 def longest_string(list)
-  # This is your job. :)
+  longest_so_far = list.first
+  list.each {|item|
+    if item.size > longest_so_far.size
+      longest_so_far = item
+    end
+  }
+  return longest_so_far
 end
 
 if __FILE__ == $PROGRAM_NAME
-  # I'd advise putting some sanity checks here.
-  # How else will you be sure your code does what you think it does?
+  p longest_string(["a", "zzzz", "c"]) == "zzzz"
+  p longest_string(["aaa", "1111", 3]) == "1111"
 end
