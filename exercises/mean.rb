@@ -24,9 +24,14 @@ require_relative "./sum"
 def mean(list)
   total = sum(list) # This is the "sum" method from our sum.rb file
   # result = ____   # Given the list's sum, how can we calculate the average?
+  result = total / (list.size*1.0)
 end
 
 if __FILE__ == $PROGRAM_NAME
+  p mean([5, 2]) == 3.5
+  p mean([5, 5]) == 5.0
+  p mean([10, 20, 30]) == 20.0
+  
   # I'd advise putting some sanity checks here.
   # How else will you be sure your code does what you think it does?
 end
