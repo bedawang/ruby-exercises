@@ -16,7 +16,7 @@
 # see how it works.  Experiment with different inputs.
 def print_line(count)
   (1..count).each do |i| # or, equivalently, for i in (1..count)
-    print "*"            # This prints a single "*"
+    print "* "            # This prints a single "*"
   end
 
   print "\n"   # This forces the output to the next line, like hitting "return"
@@ -26,7 +26,7 @@ end
 # to call the print_line method we've defined to help us print out a square.
 def print_square(dimension)
   (1..dimension).each do |i| # or, equivalently, for i in (1..dimension)
-    print_line(____)         # Fill in the blank, here.
+    print_line(dimension)         # Fill in the blank, here.
   end
 end
 
