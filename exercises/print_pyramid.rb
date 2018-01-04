@@ -18,16 +18,30 @@
 # We can now use the "print_triangle" and "print_line" methods we defined
 # there -- as if we defined them here!
 
-require_relative "./print_triangle"
+def print_line(count)
+  count.downto(1) {print "* "}
+  print "\n"  
+end
+
+def print_triangle(height, direction)
+  case direction
+  when 'up'
+    (1..height).each {|x| print_line(x)}
+  when 'down'
+    height.downto(1) {|x| print_line(x)}
+  end
+end
 
 def print_pyramid(height)
-  # This is your job. :)
-  # Suggestion: you can call print_triangle to print out the first, "upward"
-  # half of the pyramid. You'll have to write code to print out the second,
-  # "downward" half of the pyramid.
+  print_triangle(height, 'up')
+  print_triangle(height-1, 'down')
 end
 
 if __FILE__ == $PROGRAM_NAME
-  # I'd advise putting some sanity checks here.
-  # How else will you be sure your code does what you think it does?
+  print_pyramid(6)
+  print_pyramid(15)
+  print_pyramid(20)
+  print_pyramid(0)
+  print_pyramid(-2)
+   print_pyramid(7)
 end
