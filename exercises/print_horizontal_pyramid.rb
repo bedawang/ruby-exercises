@@ -12,6 +12,20 @@
 # *******
 
 def print_horizontal_pyramid(height)
+  line = 1
+  spaces = height
+  
+  line.upto(height) do
+    spaces.times do
+      print ' '
+    end
+    (2 * line -1).times do
+      print '*'
+    end
+    print "\n"
+    spaces -= 1
+    line += 1
+  end
 end
 
 if __FILE__ == $PROGRAM_NAME
