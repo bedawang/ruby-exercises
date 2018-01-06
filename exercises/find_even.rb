@@ -10,6 +10,14 @@
 #  find_even([10,10,10,11,11,11]) == [10,10,10]
 
 def find_even(array)
+  even = Array.new
+  array.each {|number|
+    if number & 1 == 0  # number AND 0x1 checks for the least significant bit, indicating odd or even
+    #if number.even?
+      even << number
+    end
+  }
+  return even
 end
 
 # Note #1
@@ -38,19 +46,19 @@ end
 if __FILE__ == $PROGRAM_NAME
   # Here are some sanity checks written in "plain English".
   # See if you can translate them into Ruby. Your checks should look like
-  #
   #   p find_even(input) == ...expected return value...
-
+  p find_even([1, 2, 3, 4, 6, 8, 10]) == [2, 4, 6, 8, 10]
   # If the input is the empty array,
   #  find_even should return the empty array
-
+  p find_even([]) == []
   # If the input array contains all EVEN numbers,
   #   find_even should return the input array
   p find_even([2, 4, 6, 8, 10]) == [2, 4, 6, 8, 10]
 
   # If the input array contains all ODD numbers,
   #   find_even should return the empty array
-
+  p find_even([1, 3, 5, 7, 9]) == []
   # If an even number appears N times in the input array,
   #   it should appear N times in the the array that find_even returns
+    p find_even([1, 2, 2, 4, 4, 6]) == [2, 2, 4, 4, 6]
 end
