@@ -28,12 +28,9 @@
 
 def number_of_bottles(i)
   case i
-  when 2..(1.0 / 0.0) # gets to infinity
-    "#{i} bottles"
-  when 1
-    "#{i} bottle"
-  when 0
-    "no more bottles"
+    when 2..(1.0 / 0.0); "#{i} bottles" # gets to infinity
+    when 1; "#{i} bottle"
+    when 0; "no more bottles"
   end
 end
 
