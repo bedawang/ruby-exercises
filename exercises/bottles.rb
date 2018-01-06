@@ -26,7 +26,22 @@
 #   no more bottles
 #   etc.
 
+def number_of_bottles(i)
+  case i
+  when 2..(1.0 / 0.0) # gets to infinity
+    "#{i} bottles"
+  when 1
+    "#{i} bottle"
+  when 0
+    "no more bottles"
+  end
+end
+
 def bottles(start_number)
+  start_number.downto(1) {|i|     
+    print "#{number_of_bottles(i)} of beer on the wall, #{number_of_bottles(i)} of beer.\n"
+    print "Take one down, pass it around, #{number_of_bottles(i-1)} of beer on the wall!\n"  
+  }
 end
 
 if __FILE__ == $PROGRAM_NAME
