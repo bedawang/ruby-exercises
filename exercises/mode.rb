@@ -15,8 +15,6 @@
 #
 # Break it down as clearly as you can in your own head first.
 
-require "simple_stats"
-
 def mode(array)
   h = Hash.new
   array.uniq.each {|x|
@@ -27,11 +25,6 @@ def mode(array)
   }
   h = h.to_a.sort_by(&:last).reverse
   h[0][0]
-   
-  #array.modes.join
-  #p array.select { |item| array.count(item) > 0}.uniq.join('')
-  #array.sort.find_all { |e| array.count(e)}
-  #array.find_all {|e| array.rindex(e) != array.index(e) }
 end
 
 if __FILE__ == $PROGRAM_NAME
