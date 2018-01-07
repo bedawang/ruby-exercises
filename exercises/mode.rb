@@ -15,7 +15,23 @@
 #
 # Break it down as clearly as you can in your own head first.
 
+require "simple_stats"
+
 def mode(array)
+  h = Hash.new
+  array.uniq.each {|x|
+    h[x] = 0
+  }
+  array.each {|x|
+    h[x] += 1
+  }
+  h = h.to_a.sort_by(&:last).reverse
+  h[0][0]
+   
+  #array.modes.join
+  #p array.select { |item| array.count(item) > 0}.uniq.join('')
+  #array.sort.find_all { |e| array.count(e)}
+  #array.find_all {|e| array.rindex(e) != array.index(e) }
 end
 
 if __FILE__ == $PROGRAM_NAME
@@ -44,9 +60,9 @@ if __FILE__ == $PROGRAM_NAME
 
   # The mode of identical data points should be that data point
   p mode(["hello"] * 100) == "hello"
-
+  p mode(["a"]) == "a"
   # The mode doesn't depend on the order of the data
   p mode(["a", "a", "a", "b"]) == "a"
-  p mode(["b", "a", "a", "a"]) == "a"
+  p mode(["b", "b", "b", "a"]) == "b"
   p mode(["a", "b", "a", "a"]) == "a"
 end
